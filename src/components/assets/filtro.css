@@ -42,10 +42,8 @@
 
 .info {
     margin-right: 20px;
-    /* Espaço entre as informações e o gráfico */
 }
 
 .chart-container {
     flex-grow: 1;
-    /* Para o gráfico ocupar o espaço restante */
 }
