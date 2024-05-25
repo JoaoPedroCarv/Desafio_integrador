@@ -4,6 +4,7 @@ import Dashboard from './filtro';
 
 function Mapa() {
     const [showText, setShowText] = useState(false);
+    const [Estado, setEstado] = useState(null);
     useEffect(() => {
         const description = document.querySelector(".tooltip");
 
@@ -37,8 +38,6 @@ function Mapa() {
 
         function handleClick(event) {
             const stateId = event.target.id;
-            // Chame a função que você quer que seja acionada
-            // e passe o ID do estado como argumento
             handleStateClick(stateId);
         }
 
@@ -63,6 +62,7 @@ function Mapa() {
     // Função que será chamada quando um estado for clicado
     function handleStateClick(stateId) {
         setShowText(true)
+        setEstado(stateId);
         console.log('Estado clicado:', stateId);
         // Faça o que você quiser com o ID do estado aqui
     }
@@ -162,7 +162,7 @@ function Mapa() {
             </svg>
             <div class="tooltip"></div>
             {showText && (
-                <Dashboard />
+                <Dashboard onClose={() => setShowText(false)} idEstado={Estado} />
             )}
         </>
     );
