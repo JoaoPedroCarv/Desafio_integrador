@@ -6,11 +6,16 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;  /* Alinha o popup à direita */
     align-items: center;
+    padding-right: 10%;  /* Adiciona um preenchimento à direita para centralização parcial */
 }
 
 .popup {
+    position: relative;  /* Adiciona o posicionamento relativo para que o botão de fechar seja posicionado corretamente */
+    max-width: 80%;  /* Limita a largura máxima do popup para evitar overflow */
+    max-height: 90%; /* Limita a altura máxima do popup para evitar overflow */
+    overflow: auto;  /* Adiciona rolagem se o conteúdo exceder a altura máxima */
     background-color: white;
     padding: 20px;
     border-radius: 8px;
