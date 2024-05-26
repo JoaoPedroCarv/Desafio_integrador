@@ -96,7 +96,7 @@ function App() {
       </div>
 
       <div className="App">
-        <h1 className='cor-espaco'>Vai Brasil</h1>
+        <h1 className='cor-espaco'>Covid Brasil</h1>
         <div className='div-mapa'>
           <Mapa />
         </div>
