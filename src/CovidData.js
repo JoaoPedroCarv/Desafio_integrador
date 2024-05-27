@@ -37,21 +37,21 @@ const CovidData = ({ region, state, date }) => {
 
   const regionStates = region
     ? {
-        'Centro-Oeste': ['Distrito Federal', 'Goiás', 'Mato Grosso', 'Mato Grosso do Sul'],
-        'Nordeste': [
-          'Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco',
-          'Piauí', 'Rio Grande do Norte', 'Sergipe'
-        ],
-        'Norte': ['Acre', 'Amapá', 'Amazonas', 'Pará', 'Rondônia', 'Roraima', 'Tocantins'],
-        'Sudeste': ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'],
-        'Sul': ['Paraná', 'Rio Grande do Sul', 'Santa Catarina']
-      }[region]
+      'Centro-Oeste': ['Distrito Federal', 'Goiás', 'Mato Grosso', 'Mato Grosso do Sul'],
+      'Nordeste': [
+        'Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco',
+        'Piauí', 'Rio Grande do Norte', 'Sergipe'
+      ],
+      'Norte': ['Acre', 'Amapá', 'Amazonas', 'Pará', 'Rondônia', 'Roraima', 'Tocantins'],
+      'Sudeste': ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'],
+      'Sul': ['Paraná', 'Rio Grande do Sul', 'Santa Catarina']
+    }[region]
     : [];
 
   const filteredData = filter && filter.toLowerCase() !== 'todos'
     ? data.data.filter((item) =>
-        item.state.toLowerCase().includes(filter.toLowerCase())
-      )
+      item.state.toLowerCase().includes(filter.toLowerCase())
+    )
     : data.data;
 
   const filteredByRegion = region
@@ -60,10 +60,10 @@ const CovidData = ({ region, state, date }) => {
 
   const filteredByDate = date
     ? filteredByRegion.filter((item) => {
-        const itemDate = new Date(item.datetime);
-        const filterDate = new Date(date);
-        return itemDate.toDateString() === filterDate.toDateString();
-      })
+      const itemDate = new Date(item.datetime);
+      const filterDate = new Date(date);
+      return itemDate.toDateString() === filterDate.toDateString();
+    })
     : filteredByRegion;
 
   const shouldShowData = region || state || date || filter;
@@ -72,14 +72,14 @@ const CovidData = ({ region, state, date }) => {
     labels: filteredByDate.map(item => item.state),
     datasets: [
       {
-        label: 'Confirmed Cases',
+        label: 'Casos confirmados',
         data: filteredByDate.map(item => item.cases),
         backgroundColor: 'rgba(75,192,192,0.6)',
         borderColor: 'rgba(75,192,192,1)',
         borderWidth: 1,
       },
       {
-        label: 'Deaths',
+        label: 'Mortes',
         data: filteredByDate.map(item => item.deaths),
         backgroundColor: 'rgba(255,99,132,0.6)',
         borderColor: 'rgba(255,99,132,1)',
@@ -90,11 +90,11 @@ const CovidData = ({ region, state, date }) => {
 
   return (
     <div className="covid-data-container">
-      <h1>COVID-19 Data for Brazil</h1>
+      <h1>Pesquisa</h1>
       <div className="filter-container">
         <input
           type="text"
-          placeholder="Filter by state (or type 'Todos' for all)"
+          placeholder="Digite o estado"
           value={filter}
           onChange={handleFilterChange}
           className="filter-input"
@@ -103,7 +103,7 @@ const CovidData = ({ region, state, date }) => {
       {shouldShowData && (
         <div>
           {filteredByDate.length === 0 ? (
-            <p>No data found.</p>
+            <p>Estado não encontrado</p>
           ) : (
             <>
               <div className="chart-container">
@@ -113,8 +113,8 @@ const CovidData = ({ region, state, date }) => {
                 {filteredByDate.map((item, index) => (
                   <div key={index} className="state-data">
                     <h2>{item.state}</h2>
-                    <p>Confirmed: {item.cases}</p>
-                    <p>Deaths: {item.deaths}</p>
+                    <p>Confirmados: {item.cases}</p>
+                    <p>Mortes: {item.deaths}</p>
                   </div>
                 ))}
               </div>

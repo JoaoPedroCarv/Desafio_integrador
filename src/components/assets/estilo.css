@@ -1,9 +1,9 @@
-body{
+body {
     background: #274653;
 }
 
 /*CSS Cabeçalho*/
-.cabeçalho{
+.cabecalho {
     padding: 2%;
     background-color: #319d8f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -12,18 +12,20 @@ body{
 .menu {
     position: fixed;
     margin-top: 2%;
-    left: -300px; /* Posição inicial, fora da tela */
+    left: -300px;
+    /* Posição inicial, fora da tela */
     width: 300px;
     height: 100%;
     background-color: #319d8f;
     transition: left 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-  
+
 .menu.show {
-    left: 0; /* Posição final, na tela */
+    left: 0;
+    /* Posição final, na tela */
 }
-  
+
 .menu-icon {
     width: 30px;
     height: 20px;
@@ -32,22 +34,23 @@ body{
     justify-content: space-between;
     cursor: pointer;
 }
-  
+
 .menu-icon span {
     width: 100%;
     height: 4px;
     background-color: black;
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+    transition: background-color 0.3s ease;
+    /* Adiciona uma transição suave */
 }
-  
+
 .menu-icon.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
-  
+
 .menu-icon.open span:nth-child(2) {
     opacity: 0;
 }
-  
+
 .menu-icon.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -56,27 +59,28 @@ body{
 
 .div-filtros {
     padding: 20px;
-    overflow-y: auto; 
+    overflow-y: auto;
     max-height: 500px;
 }
 
-.cor-espaco{
+.cor-espaco {
     color: white;
 }
 
-.borda-filtro{
+.borda-filtro {
     border-radius: 15px;
     font-size: 16px;
     padding: 8px;
 }
+
 .div-botao-filtro {
     padding: 20px;
-    display: flex   ;
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.botao-filtro{
+.botao-filtro {
     border-radius: 15px;
     background-color: #e8c371;
     font-size: 16px;
@@ -87,10 +91,13 @@ body{
 .dashboard {
     display: flex;
     flex-wrap: wrap;
-    max-width: 600px; /* ajuste conforme necessário */
+    max-width: 600px;
+    /* ajuste conforme necessário */
     position: absolute;
-    top: 130px; /* Ajuste conforme necessário */
-    right: 60px; /* Ajuste conforme necessário */
+    top: 130px;
+    /* Ajuste conforme necessário */
+    right: 60px;
+    /* Ajuste conforme necessário */
     background-color: white;
     border: 1px solid #ccc;
     padding: 20px;
@@ -98,11 +105,15 @@ body{
     z-index: 999;
 }
 
-.dashboard > div {
-    flex: 1 0 50%; /* cada div ocupa metade da largura da sua linha */
-    max-width: 50%; /* cada div ocupa no máximo metade da largura da sua linha */
-    padding: 10px; /* espaçamento interno */
-    box-sizing: border-box; /* inclui padding e border na largura e altura */
+.dashboard>div {
+    flex: 1 0 50%;
+    /* cada div ocupa metade da largura da sua linha */
+    max-width: 50%;
+    /* cada div ocupa no máximo metade da largura da sua linha */
+    padding: 10px;
+    /* espaçamento interno */
+    box-sizing: border-box;
+    /* inclui padding e border na largura e altura */
 }
 
 .fechar-dashboard {
@@ -120,35 +131,42 @@ body{
     color: red;
 }
 
-  
+
 /*CSS mapa*/
-.norte{
+.norte {
     fill: #5d7507;
 }
-.nordeste{
+
+.nordeste {
     fill: #6c951b;
 }
-.centro-oeste{
+
+.centro-oeste {
     fill: #00973a;
 }
-.sudeste{
+
+.sudeste {
     fill: #076318;
 }
-.sul{
+
+.sul {
     fill: #32a44f;
 }
-path{
+
+path {
     fill: #1da1f2;
     stroke: white;
     stroke-width: 1px;
 }
-path:hover{
+
+path:hover {
     fill: grey;
     stroke: red;
     stroke-width: 3px;
     transition: fill 0.4s;
 }
-.tooltip{
+
+.tooltip {
     pointer-events: none;
     position: absolute;
     font-size: 18px;
@@ -164,10 +182,12 @@ path:hover{
     transform: translateX(-50%);
     display: none;
 }
-.tooltip.active{
+
+.tooltip.active {
     display: block;
 }
-.tooltip:after{
+
+.tooltip:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -180,11 +200,11 @@ path:hover{
     border-top: 10px solid transparent;
 }
 
-.div-mapa{
+.div-mapa {
     width: 30%;
     height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto; 
+    margin: auto;
 }

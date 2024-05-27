@@ -3,7 +3,10 @@ import './App.css';
 import Mapa from './components/pages/Mapa';
 import graficoPizza from './components/assets/img/grafico pizza.png';
 import graficoColuna from './components/assets/img/gafico coluna.png';
-import CovidData from './CovidData'; // Importa o componente
+import CovidData from './CovidData';
+import Login from './components/pages/login';
+
+
 
 const regions = {
   'Centro-Oeste': ['Distrito Federal', 'Goiás', 'Mato Grosso', 'Mato Grosso do Sul'],
@@ -23,6 +26,12 @@ function App() {
   const [stateFilter, setStateFilter] = useState('');
   const [dateFilter, setDateFilter] = useState('');
   const [filteredStates, setFilteredStates] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,10 +40,8 @@ function App() {
   const handleRegionChange = (e) => {
     const selectedRegion = e.target.value;
     setRegionFilter(selectedRegion);
-    // Filtra os estados baseado na região selecionada
     const statesInRegion = regions[selectedRegion] || [];
     setFilteredStates(statesInRegion);
-    // Limpa o filtro de estado ao mudar a região
     setStateFilter('');
   };
 
@@ -54,9 +61,17 @@ function App() {
     setShowText(false);
   };
 
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  if (!isLoggedIn) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
     <>
-      <div className='cabeçalho'>
+      <div className='cabecalho'>
         <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -92,8 +107,13 @@ function App() {
           <div className="div-botao-filtro">
             <button className="botao-filtro" onClick={handleFilterClick}>Filtrar</button>
           </div>
+          <div>
+            <button onClick={handleLogout}>Logout</button>
+
+          </div>
         </div>
       </div>
+
 
       <div className="App">
         <h1 className='cor-espaco'>Covid Brasil</h1>
@@ -123,6 +143,7 @@ function App() {
         )}
         <CovidData region={regionFilter} state={stateFilter} date={dateFilter} />
       </div>
+
     </>
   );
 }
