@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/login.css';
+import '../../assets/login.css';
+import { NavLink } from 'react-router-dom';
 
 const Cadastro = () => {
     const [nome, setNome] = useState('');
@@ -50,6 +51,7 @@ const Cadastro = () => {
                 />
                 <button type="submit">Cadastrar</button>
             </form>
+            <NavLink to={'/logar'}>voltar</NavLink>
         </div>
     );
 };

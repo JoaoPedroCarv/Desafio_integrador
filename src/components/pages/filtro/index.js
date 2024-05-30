@@ -61,6 +61,7 @@ function Dashboard({ onClose, idEstado }) {
             <div className="panel-content">
                 <div className="info">
                     <h1> {data.state}</h1>
+                    <img src={`https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${data.uf}.png`}></img>
                     <div className="data-section">
                         <div className="row">
                             <div>

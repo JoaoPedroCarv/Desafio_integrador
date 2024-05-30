@@ -41,6 +41,8 @@ const Login = ({ onLogin }) => {
                 <button type="submit">Acessar Portal</button>
                 {error && <p className="error">{error}</p>}
             </form>
+            <NavLink to={'/cadastro'}>Cadastrar</NavLink>
+            <br></br>
             <NavLink to={'/'}>voltar</NavLink>
         </div>
     );
