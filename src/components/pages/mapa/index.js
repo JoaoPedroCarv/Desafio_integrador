@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../assets/estilo.css';
-import Dashboard from './filtro';
+import '../../assets/estilo.css';
+import Dashboard from '../filtro';
 
 function Mapa() {
     const [showText, setShowText] = useState(false);

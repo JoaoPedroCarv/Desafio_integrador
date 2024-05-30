@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/login.css';
+import '../../assets/login.css';
+import { NavLink } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
@@ -40,6 +41,7 @@ const Login = ({ onLogin }) => {
                 <button type="submit">Acessar Portal</button>
                 {error && <p className="error">{error}</p>}
             </form>
+            <NavLink to={'/'}>voltar</NavLink>
         </div>
     );
 };

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
-import '../../App.css';
-import '../assets/filtro.css'
+import '../../../App.css';
+import '../../assets/filtro.css'
 
 function Dashboard({ onClose, idEstado }) {
     const [data, setData] = useState(null);

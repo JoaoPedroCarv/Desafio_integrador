@@ -1,29 +1,30 @@
-body {
-    background: #274653;
-}
-
-/*CSS Cabeçalho*/
+/* CSS Cabeçalho */
 .cabecalho {
     padding: 2%;
     background-color: #319d8f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+/* CSS Menu */
 .menu {
     position: fixed;
-    margin-top: 2%;
+    top: 0;
     left: -300px;
-    /* Posição inicial, fora da tela */
     width: 300px;
     height: 100%;
     background-color: #319d8f;
     transition: left 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .menu.show {
     left: 0;
-    /* Posição final, na tela */
 }
 
 .menu-icon {
@@ -33,6 +34,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
 }
 
 .menu-icon span {
@@ -40,7 +45,6 @@ body {
     height: 4px;
     background-color: black;
     transition: background-color 0.3s ease;
-    /* Adiciona uma transição suave */
 }
 
 .menu-icon.open span:nth-child(1) {
@@ -55,12 +59,12 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/*CSS Filtros*/
-
+/* CSS Filtros */
 .div-filtros {
     padding: 20px;
     overflow-y: auto;
-    max-height: 500px;
+    max-height: calc(100% - 120px);
+    /* Ajuste conforme necessário */
 }
 
 .cor-espaco {
@@ -87,17 +91,14 @@ body {
     padding: 8px;
 }
 
-/*CSS dashboard*/
+/* CSS Dashboard */
 .dashboard {
     display: flex;
     flex-wrap: wrap;
     max-width: 600px;
-    /* ajuste conforme necessário */
-    position: absolute;
+    position: fixed;
     top: 130px;
-    /* Ajuste conforme necessário */
     right: 60px;
-    /* Ajuste conforme necessário */
     background-color: white;
     border: 1px solid #ccc;
     padding: 20px;
@@ -107,13 +108,9 @@ body {
 
 .dashboard>div {
     flex: 1 0 50%;
-    /* cada div ocupa metade da largura da sua linha */
     max-width: 50%;
-    /* cada div ocupa no máximo metade da largura da sua linha */
     padding: 10px;
-    /* espaçamento interno */
     box-sizing: border-box;
-    /* inclui padding e border na largura e altura */
 }
 
 .fechar-dashboard {
@@ -131,8 +128,7 @@ body {
     color: red;
 }
 
-
-/*CSS mapa*/
+/* CSS Mapa */
 .norte {
     fill: #5d7507;
 }
