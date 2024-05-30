@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../assets/login.css';
+import '../../assets/cadastro.css';
 import { NavLink } from 'react-router-dom';
 
 const Cadastro = () => {
@@ -14,44 +14,48 @@ const Cadastro = () => {
     };
 
     return (
-        <div className="login-container">
-            <h2>Cadastro</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="nome">Nome</label>
-                <input
-                    type="text"
-                    id="nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    required
-                />
-                <label htmlFor="email">E-mail</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <label htmlFor="senha">Senha</label>
-                <input
-                    type="password"
-                    id="senha"
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
-                    required
-                />
-                <label htmlFor="preferencia">Região de Preferência</label>
-                <input
-                    type="text"
-                    id="preferencia"
-                    value={preferencia}
-                    onChange={(e) => setPreferencia(e.target.value)}
-                    required
-                />
-                <button type="submit">Cadastrar</button>
-            </form>
-            <NavLink to={'/logar'}>voltar</NavLink>
+        <div className="container">
+            <div className="left-panel">
+                <h2>Perfil</h2>
+                <p>Acesse seu perfil com infomações filtradas</p>
+                <NavLink to={'/logar'} className="btn-signin">Login</NavLink>
+            </div>
+            <div className="right-panel">
+                <h2>Crie Sua conta</h2>
+
+                <p></p>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Nome"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="email"
+                        placeholder="E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Senha"
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Região de Preferência"
+                        value={preferencia}
+                        onChange={(e) => setPreferencia(e.target.value)}
+                        required
+                    />
+                    <button type="submit" className="btn-signup">Acessar</button>
+                </form>
+            </div>
         </div>
     );
 };

@@ -1,54 +1,101 @@
-/* Cadastro.css */
-
-.cadastro-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.cadastro-container h2 {
+.container {
+    width: 800px;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel,
+.right-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+
+.left-panel {
+    background-color: #3fada8;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.right-panel {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+h2 {
     margin-bottom: 20px;
 }
 
-.cadastro-container form {
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 5px;
+    color: #777;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+form {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
-.campo {
-    margin-bottom: 15px;
+form input {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.campo label {
-    font-weight: bold;
-}
-
-.campo input,
-.campo select {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.campo select {
-    appearance: none;
-}
-
-button[type="submit"] {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+.btn-signin,
+.btn-signup {
+    padding: 15px 20px;
+    background-color: #3fada8;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+.btn-signin:hover,
+.btn-signup:hover {
+    background-color: #337d7b;
+}
+
+.btn-signup {
+    margin-top: 10px;
 }
